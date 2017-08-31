@@ -1,8 +1,11 @@
 package com.example.customer.service;
 
 import com.example.customer.model.Customer;
+
+import javax.persistence.Entity;
 import java.util.List;
 
+@Entity
 public class CustomerService {
     public void add(Customer person) {
 
