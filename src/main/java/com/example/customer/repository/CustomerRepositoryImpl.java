@@ -22,22 +22,22 @@ public class CustomerRepositoryImpl {
     private final String UPDATE_SQL = "update customer set firstName=?, lastName=?, email=?, phone=? where id=?";
     private final String DELETE_SQL = "delete from customer where id=?";
 
-    @Override
-    public void add(Customer customer) {  jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhone());}
-    @Override
-    public Customer getById(int id) {
-        return jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, new CustomerMapper(), id);
-    }
-    @Override
-    public List<Customer> get() {
-        return jdbcTemplate.query(SELECT_SQL, new CustomerMapper());
-    }
-    @Override
-    public void update(Customer customer) {  jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhone(), customer.getId());}
-    @Override
-    public void delete(int id) {
-        jdbcTemplate.update(DELETE_SQL, id);
-    }
+//    @Override
+//    public void add(Customer customer) {  jdbcTemplate.update(INSERT_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhone());}
+//    @Override
+//    public Customer getById(int id) {
+//        return jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, new CustomerMapper(), id);
+//    }
+//    @Override
+//    public List<Customer> get() {
+//        return jdbcTemplate.query(SELECT_SQL, new CustomerMapper());
+//    }
+//    @Override
+//    public void update(Customer customer) {  jdbcTemplate.update(UPDATE_SQL, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhone(), customer.getId());}
+//    @Override
+//    public void delete(int id) {
+//        jdbcTemplate.update(DELETE_SQL, id);
+//    }
 
     private static class CustomerMapper implements RowMapper<Customer> {
         @Override
